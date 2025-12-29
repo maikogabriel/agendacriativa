@@ -1,0 +1,68 @@
+@use 'variaveis' as v;
+@use 'mixins' as m;
+
+/* MENU */
+.menu {
+  @include m.flex-center(row, 1.5rem);
+  list-style: none;
+
+  &__link {
+    color: v.$cor-branca;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* BOTÃO */
+.button {
+  @include m.botao-base;
+}
+
+/* SERVIÇOS */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: v.$espacamento-sm;
+  margin-top: v.$espacamento-base;
+
+  &__card {
+    padding: v.$espacamento-base;
+    background-color: v.$cor-branca;
+    border: 1px solid v.$cor-borda;
+  }
+}
+
+/* DEPOIMENTOS */
+.testimonial {
+  max-width: 600px;
+  margin: v.$espacamento-sm auto;
+  font-style: italic;
+
+  &__author {
+    display: block;
+    margin-top: v.$espacamento-sm / 2;
+    font-weight: bold;
+  }
+}
+
+/* CONTATO */
+.contact {
+  max-width: 600px;
+  margin: 0 auto;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: v.$espacamento-sm;
+    margin-top: v.$espacamento-base;
+  }
+
+  &__input,
+  &__textarea {
+    padding: v.$espacamento-sm;
+    border: 1px solid v.$cor-borda;
+  }
+}

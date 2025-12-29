@@ -1,0 +1,24 @@
+@use 'variaveis' as v;
+
+// Centralização flex
+@mixin flex-center($direcao: row, $gap: 1rem) {
+  display: flex;
+  flex-direction: $direcao;
+  align-items: center;
+  justify-content: center;
+  gap: $gap;
+}
+
+// Botão padrão
+@mixin botao-base {
+  padding: 0.75rem 1.5rem;
+  background-color: v.$cor-secundaria;
+  color: v.$cor-branca;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+
+  &:hover {
+    background-color: lighten(v.$cor-secundaria, 10%);
+  }
+}

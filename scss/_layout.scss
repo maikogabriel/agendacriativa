@@ -1,0 +1,53 @@
+@use 'variaveis' as v;
+@use 'mixins' as m;
+
+.header {
+  @include m.flex-center(row, 2rem);
+  justify-content: space-between;
+  padding: v.$espacamento-sm v.$espacamento-base;
+  background-color: v.$cor-primaria;
+
+  &__logo {
+    color: v.$cor-branca;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+}
+
+.section {
+  padding: v.$espacamento-lg v.$espacamento-base;
+  text-align: center;
+
+  &__title {
+    font-size: 2rem;
+    margin-bottom: v.$espacamento-sm;
+  }
+
+  &__text {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  &--home {
+    background-color: v.$cor-fundo;
+  }
+
+  &--services {
+    background-color: lighten(v.$cor-fundo, 2%);
+  }
+
+  &--testimonials {
+    background-color: v.$cor-fundo;
+  }
+}
+
+/* Responsividade */
+@media (max-width: v.$mobile) {
+  .header {
+    flex-direction: column;
+  }
+
+  .section {
+    padding: v.$espacamento-base;
+  }
+}
